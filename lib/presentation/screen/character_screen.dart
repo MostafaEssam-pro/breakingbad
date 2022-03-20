@@ -19,7 +19,7 @@ class _CharacterScreenState extends State<CharacterScreen> {
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: const Text('sssss',style: TextStyle(color: Colors.black),),
+        title: const Text('Ahmed ss',style: TextStyle(color: Colors.black),),
         centerTitle: true,
 
       ),
