@@ -11,7 +11,7 @@ class _CharacterScreenState extends State<CharacterScreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: Colors.amberAccent,
+      backgroundColor: Colors.greenAccent,
       appBar:AppBar(
         //backgroundColor: Colors.red,
 
@@ -19,11 +19,10 @@ class _CharacterScreenState extends State<CharacterScreen> {
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: const Text('Ahmed ss',style: TextStyle(color: Colors.black),),
+        title: const Text('mostafa ',style: TextStyle(color: Colors.black),),
         centerTitle: true,
 
       ),
     );
   }
-  
 }
