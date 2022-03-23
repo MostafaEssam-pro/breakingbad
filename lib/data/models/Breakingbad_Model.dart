@@ -1,5 +1,5 @@
 // ignore_for_file: file_names
-class Breakingbad {
+class CharactersDto {
   int? charId;
   String? name;
   String? birthday;
@@ -12,7 +12,7 @@ class Breakingbad {
   String? category;
   List<dynamic>? betterCallSaulAppearance;
 
-  Breakingbad(
+  CharactersDto(
       {this.charId,
       this.name,
       this.birthday,
@@ -25,7 +25,7 @@ class Breakingbad {
       this.category,
       this.betterCallSaulAppearance});
 
-  Breakingbad.fromJson(Map<String, dynamic> json) {
+  CharactersDto.fromJson(Map<String, dynamic> json) {
     charId = json['char_id'];
     name = json['name'];
     birthday = json['birthday'];

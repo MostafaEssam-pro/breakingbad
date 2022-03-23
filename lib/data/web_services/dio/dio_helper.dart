@@ -4,7 +4,7 @@ class DioHelper {
   static late Dio dio;
 
   static init() {
-    String baseUrl = 'https://www.bazoka.eraasoft.com/api/';
+    String baseUrl = 'https://www.breakingbadapi.com/api/';
 
     dio = Dio(BaseOptions(
         baseUrl: baseUrl,
