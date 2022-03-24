@@ -1,57 +1,29 @@
 // ignore_for_file: file_names
 class CharactersDto {
-  int? charId;
-  String? name;
-  String? birthday;
-  List<String>? occupation;
-  String? img;
-  String? status;
-  String? nickname;
-  List<int>? appearance;
-  String? portrayed;
-  String? category;
-  List<dynamic>? betterCallSaulAppearance;
+  late int charId;
+  late String name;
+  late String nickName;
+  late String image;
+  late List<dynamic> jobs;
+  late String statusIfDeadOrAlive;
+  late List<dynamic> appearanceOfSeasons;
+  late String acotrName;
+  late String categoryForTwoSeries;
+  late List<dynamic> betterCallSaulAppearance;
 
-  CharactersDto(
-      {this.charId,
-      this.name,
-      this.birthday,
-      this.occupation,
-      this.img,
-      this.status,
-      this.nickname,
-      this.appearance,
-      this.portrayed,
-      this.category,
-      this.betterCallSaulAppearance});
+
 
   CharactersDto.fromJson(Map<String, dynamic> json) {
-    charId = json['char_id'];
-    name = json['name'];
-    birthday = json['birthday'];
-    occupation = json['occupation'].cast<String>();
-    img = json['img'];
-    status = json['status'];
-    nickname = json['nickname'];
-    appearance = json['appearance'].cast<int>();
-    portrayed = json['portrayed'];
-    category = json['category'];
-    betterCallSaulAppearance = json['betterCallSaulAppearance'];
+    charId = json["char_id"];
+    name = json["name"];
+    nickName = json["nickname"];
+    image = json["img"];
+    jobs = json["occupation"];
+    statusIfDeadOrAlive = json["status"];
+    appearanceOfSeasons = json["appearance"];
+    acotrName = json["portrayed"];
+    categoryForTwoSeries = json["category"];
+    betterCallSaulAppearance = json["better_call_saul_appearance"];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['char_id'] = charId;
-    data['name'] = name;
-    data['birthday'] = birthday;
-    data['occupation'] = occupation;
-    data['img'] = img;
-    data['status'] = status;
-    data['nickname'] = nickname;
-    data['appearance'] = appearance;
-    data['portrayed'] = portrayed;
-    data['category'] = category;
-    data['betterCallSaulAppearance'] = betterCallSaulAppearance;
-    return data;
-  }
 }

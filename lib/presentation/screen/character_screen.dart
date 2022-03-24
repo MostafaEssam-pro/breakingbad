@@ -14,12 +14,12 @@ class CharacterScreen extends StatefulWidget {
 }
 
 class _CharacterScreenState extends State<CharacterScreen> {
-  late List<CharactersDto> allCharacter;
+ late final List<CharactersDto> allCharacter;
 
   @override
   void initState() {
     super.initState();
-    allCharacter = BlocProvider.of<CharacterCubit>(context).GetCharacters();
+    BlocProvider.of<CharacterCubit>(context).GetCharacters();
   }
 
   Widget buildBlocWidget() {
@@ -64,8 +64,8 @@ class _CharacterScreenState extends State<CharacterScreen> {
             physics: const ClampingScrollPhysics(),
             itemCount: allCharacter.length,
             padding: EdgeInsets.zero,
-        itemBuilder: (ctx, context) {
-          return CharacterItem();
+        itemBuilder: (ctx, index) {
+          return CharacterItem(character: allCharacter[index]);
         });
   }
 

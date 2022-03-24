@@ -1,5 +1,5 @@
 // ignore_for_file: prefer_const_constructors
-import 'package:breakingbad/core/constant/app_router.dart';
+import 'package:breakingbad/app_router.dart';
 import 'package:breakingbad/presentation/screen/character_screen.dart';
 import 'package:flutter/material.dart';
 

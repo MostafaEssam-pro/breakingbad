@@ -1,9 +1,14 @@
 import 'package:breakingbad/presentation/screen/character_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'core/constant/app_router.dart';
+import 'app_router.dart';
+import 'data/web_services/dio/dio_helper.dart';
 
-void main() {
+
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  DioHelper.init();
   runApp( AppRootraBark(appRoute:AppRoute()));
 }
 
@@ -17,7 +22,7 @@ class AppRootraBark extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: appRoute.generateRoute,
-      home: CharacterScreen(),
+      //home: const CharacterScreen(),
     );
   }
 }

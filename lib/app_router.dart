@@ -23,6 +23,7 @@ class AppRoute {
           builder: (_) => BlocProvider(
             create: (BuildContext context) =>
                 CharacterCubit(characterRepository),
+            // ignore: prefer_const_constructors
             child:  CharacterScreen(),
           ),
         );
