@@ -24,7 +24,7 @@ class CharacterItem extends StatelessWidget {
                   height: double.infinity,
                   width: double.infinity,
                   fit: BoxFit.cover,
-                  placeholder: '/assets/icons/loading.gif',
+                  placeholder: 'assets/images/loading.gif',
                   image: character.image.toString())
               : Image.asset('/assets/images/default.png'),
         ),
@@ -34,10 +34,10 @@ class CharacterItem extends StatelessWidget {
           color: Colors.black12,
           alignment: Alignment.bottomCenter,
           child: Text(
-            '${character.name}',
+            character.name,
             style: TextStyle(color: Colors.amber),
             overflow: TextOverflow.ellipsis,
-            maxLines:2,
+            maxLines:3,
             textAlign: TextAlign.center,
           ),
         ),
