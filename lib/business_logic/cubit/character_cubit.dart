@@ -8,16 +8,18 @@ import 'package:meta/meta.dart';
 part 'character_state.dart';
 
 class CharacterCubit extends Cubit<CharacterState> {
+  final CharacterRepository _characterRepository;
   CharacterCubit(this._characterRepository) : super(CharacterInitial());
 
    List<CharactersDto> Characters=[];
 
-  final CharacterRepository _characterRepository;
+
 
   List<CharactersDto> GetCharacters() {
     _characterRepository.GetCharacterList().then((characters) {
-      emit(CharacterLoad(characters, charactersDto: []));
+      emit(CharactersLoaded(characters));
       Characters = characters;
+      print('555');
     });
     return Characters;
   }

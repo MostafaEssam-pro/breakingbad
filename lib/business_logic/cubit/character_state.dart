@@ -5,11 +5,12 @@ abstract class CharacterState {}
 
 class CharacterInitial extends CharacterState {}
 
-class CharacterLoad extends CharacterState {
-  final List<CharactersDto> charactersDto;
-  CharacterLoad(List<CharactersDto> characters, {
-    required this.charactersDto,
-  });
+
+
+class CharactersLoaded extends CharacterState {
+  final List<CharactersDto> characters;
+
+  CharactersLoaded(this.characters);
 }
 
 class CharacterError extends CharacterState {}

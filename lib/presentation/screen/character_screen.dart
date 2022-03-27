@@ -10,11 +10,11 @@ class CharacterScreen extends StatefulWidget {
   const CharacterScreen({Key? key}) : super(key: key);
 
   @override
-  State<CharacterScreen> createState() => _CharacterScreenState();
+  _CharacterScreenState createState() => _CharacterScreenState();
 }
 
 class _CharacterScreenState extends State<CharacterScreen> {
- late final List<CharactersDto> allCharacter;
+  late List<CharactersDto> allCharacter;
 
   @override
   void initState() {
@@ -25,8 +25,8 @@ class _CharacterScreenState extends State<CharacterScreen> {
   Widget buildBlocWidget() {
     return BlocBuilder<CharacterCubit, CharacterState>(
         builder: (context, state) {
-      if (state is CharacterLoad) {
-        allCharacter = state.charactersDto;
+      if (state is CharactersLoaded) {
+        allCharacter = (state).characters;
         return buildLoadListWidget();
       } else {
         return ShowLoadingInductor();
@@ -41,9 +41,10 @@ class _CharacterScreenState extends State<CharacterScreen> {
     ));
   }
 
-  buildLoadListWidget() {
+  Widget buildLoadListWidget() {
     return SingleChildScrollView(
       child: Container(
+        //color: Colors.grey,
         child: Column(
           children: [
             buildCharacterLIst(),
@@ -53,26 +54,27 @@ class _CharacterScreenState extends State<CharacterScreen> {
     );
   }
 
-  buildCharacterLIst() {
+  Widget buildCharacterLIst() {
     return GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 2 / 3,
-            crossAxisSpacing: 1,
-            mainAxisSpacing: 1),
-            shrinkWrap: true,
-            physics: const ClampingScrollPhysics(),
-            itemCount: allCharacter.length,
-            padding: EdgeInsets.zero,
-        itemBuilder: (ctx, index) {
-          return CharacterItem(character: allCharacter[index]);
-        });
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 2 / 3,
+          crossAxisSpacing: 1,
+          mainAxisSpacing: 1),
+      shrinkWrap: true,
+      physics: const ClampingScrollPhysics(),
+      itemCount: allCharacter.length,
+      padding: EdgeInsets.zero,
+      itemBuilder: (ctx, index) {
+        return CharacterItem(character: allCharacter[index]);
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.greenAccent,
+      //backgroundColor: Colors.greenAccent,
       appBar: AppBar(
         //backgroundColor: Colors.red,
 

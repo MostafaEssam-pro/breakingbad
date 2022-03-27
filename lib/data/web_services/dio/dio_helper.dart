@@ -10,9 +10,9 @@ class DioHelper {
         baseUrl: baseUrl,
         receiveDataWhenStatusError: true,
         followRedirects: false,
-        connectTimeout: 5000000,
-        receiveTimeout: 5000000,
-
+        connectTimeout: 20 * 1000,
+        // 60 seconds,
+        receiveTimeout: 20 * 1000,
         responseType: ResponseType.plain,
         headers: {
           'Content-Type': 'application/json',

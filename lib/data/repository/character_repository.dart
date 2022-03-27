@@ -11,8 +11,7 @@ class CharacterRepository {
   Future<List<CharactersDto>> GetCharacterList() async {
     // ignore: non_constant_identifier_names
     final Characters = await _characterService.GetCharacterList();
+    return Characters.map((character) => CharactersDto.fromJson(character)).toList();
 
-    return Characters.map((character) => CharactersDto.fromJson(character))
-        .toList();
   }
 }

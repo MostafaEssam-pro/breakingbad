@@ -8,11 +8,13 @@ class CharacterService {
   // ignore: non_constant_identifier_names
   Future<List<dynamic>> GetCharacterList() async {
     try {
-      Response response  =await DioHelper.getData(
+      Response response = await DioHelper.getData(
         url: 'characters',
       );
-      print(response.data);
-      return  json.decode(response.data);
+
+      var jsonData = jsonDecode(response.data);
+      //print(response.data);
+      return jsonData;
     } catch (e) {
       print(e.toString());
       return [];
