@@ -15,6 +15,9 @@ class CharacterScreen extends StatefulWidget {
 
 class _CharacterScreenState extends State<CharacterScreen> {
   late List<CharactersDto> allCharacter;
+  late List<CharactersDto> searchCharacter;
+  final bool _isSearch=false;
+  final  _textSearchController=TextEditingController();
 
   @override
   void initState() {
