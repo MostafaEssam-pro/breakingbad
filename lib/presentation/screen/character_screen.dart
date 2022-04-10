@@ -15,14 +15,66 @@ class CharacterScreen extends StatefulWidget {
 
 class _CharacterScreenState extends State<CharacterScreen> {
   late List<CharactersDto> allCharacter;
-  late List<CharactersDto> searchCharacter;
-  final bool _isSearch=false;
-  final  _textSearchController=TextEditingController();
+  late List<CharactersDto> searchCharacters;
+  final bool _isSearch = false;
+  final _textSearchController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
     BlocProvider.of<CharacterCubit>(context).GetCharacters();
+  }
+
+  Widget _buildSearchFiled() {
+    return TextField(
+      controller: _textSearchController,
+      cursorColor: Colors.blueAccent,
+      decoration: InputDecoration(
+          hintText: 'Search',
+          border: InputBorder.none,
+          hintStyle: TextStyle(
+            color: Colors.blueAccent,
+          )),
+      style: TextStyle(color: Colors.yellow, fontSize: 20),
+      onChanged: (searchCharacter) {
+        addSearchForItemToCharacterList(searchCharacter);
+      },
+    );
+  }
+
+  void addSearchForItemToCharacterList(String searchCharacter) {
+    searchCharacters = allCharacter
+        .where((Character) =>
+            Character.name.toLowerCase().startsWith(searchCharacter))
+        .toList();
+    setState(() {});
+  }
+
+  List<Widget> _buildAppBarAction() {
+    if (_isSearch) {
+      return [
+        IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.clear,
+              color: Colors.black,
+            ))
+      ];
+    } else {
+      return [
+        IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.search,
+            color: Colors.grey,
+          ),
+        )
+      ];
+    }
+  }
+
+  void _stratSearch(){
+
   }
 
   Widget buildBlocWidget() {
