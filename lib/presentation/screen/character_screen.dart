@@ -1,5 +1,4 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, prefer_const_constructors, non_constant_identifier_names
-
 import 'package:breakingbad/business_logic/cubit/character_cubit.dart';
 import 'package:breakingbad/data/models/Breakingbad_Model.dart';
 import 'package:breakingbad/presentation/Widget/character_item.dart';
